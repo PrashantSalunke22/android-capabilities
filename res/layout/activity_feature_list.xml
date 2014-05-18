@@ -7,6 +7,7 @@
     tools:ignore="MergeRootFrame" >
 
     <TextView
+        android:background="#C0C0C0"
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

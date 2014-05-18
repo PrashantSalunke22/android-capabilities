@@ -102,15 +102,10 @@ public class FeatureList extends ActionBarActivity {
 		t.setVerticalScrollBarEnabled(true);
 		t.setMovementMethod(new ScrollingMovementMethod());
 		Feature[] features = getFeatures();
-		String text = "<h1><b><u>Software</u></b><h1>";
+		String text = "<h1><b><u>All</u></b><h1>";
 		for(Feature feature : features)
 		{
-			if(feature.software)text += "<p>" + feature.msg + "</p>";
-		}
-		text += "<h1><b><u>Hardware</u></b><h1>";
-		for(Feature feature : features)
-		{
-			if(!feature.software)text += "<p>" + feature.msg + "</p>";
+			text += "<p>" + feature.msg + "</p>";
 		}
 		t.setText(Html.fromHtml(text));
 	}
@@ -118,17 +113,95 @@ public class FeatureList extends ActionBarActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.feature_list, menu);
+		getMenuInflater().inflate(R.menu.main_activity_actions, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
+		TextView t = (TextView) findViewById(R.id.editText);
+		Feature[] features = getFeatures();
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		if (id == R.id.action_all) {
+			String text = "<h1><b><u>All</u></b><h1>";
+			for(Feature feature : features)
+			{
+				text += "<p>" + feature.msg + "</p>";
+			}
+			t.setText(Html.fromHtml(text));
+			return true;
+		}
+		if (id == R.id.action_on_off) {
+			String text = "<h1><b><u>On</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(feature.has)text += "<p>" + feature.msg + "</p>";
+			}
+			text += "<h1><b><u>Off</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(!feature.has)text += "<p>" + feature.msg + "</p>";
+			}
+			t.setText(Html.fromHtml(text));
+			return true;
+		}
+		if (id == R.id.action_software_hardware) {
+			String text = "<h1><b><u>Software</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(feature.software)text += "<p>" + feature.msg + "</p>";
+			}
+			text += "<h1><b><u>Hardware</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(!feature.software)text += "<p>" + feature.msg + "</p>";
+			}
+			t.setText(Html.fromHtml(text));
+			return true;
+		}
+		if (id == R.id.action_camera) {
+			String text = "<h1><b><u>Camera</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(feature.camera)text += "<p>" + feature.msg + "</p>";
+			}
+			t.setText(Html.fromHtml(text));
+			return true;
+		}
+		if (id == R.id.action_sensor) {
+			String text = "<h1><b><u>Sensor</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(feature.sensor)text += "<p>" + feature.msg + "</p>";
+			}
+			t.setText(Html.fromHtml(text));
+			return true;
+		}
+		if (id == R.id.action_screen) {
+			String text = "<h1><b><u>Screen</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(feature.screen)text += "<p>" + feature.msg + "</p>";
+			}
+			t.setText(Html.fromHtml(text));
+			return true;
+		}
+		if (id == R.id.action_connectivity) {
+			String text = "<h1><b><u>Connectivity</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(feature.connectivity)text += "<p>" + feature.msg + "</p>";
+			}
+			t.setText(Html.fromHtml(text));
+			return true;
+		}
+		if (id == R.id.action_misc) {
+			String text = "<h1><b><u>Misc</u></b><h1>";
+			for(Feature feature : features)
+			{
+				if(!feature.camera && !feature.screen && !feature.sensor && !feature.connectivity)text += "<p>" + feature.msg + "</p>";
+			}
+			t.setText(Html.fromHtml(text));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

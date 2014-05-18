@@ -6,18 +6,35 @@
     </item>
     
     <item
-        android:id="@+id/action_software"
-        android:title="Software">
+        android:id="@+id/action_on_off"
+        android:title="On/Off">
     </item>
     
     <item
-        android:id="@+id/action_harware"
-        android:title="Hardware">
+        android:id="@+id/action_software_hardware"
+        android:title="Software/Hardware">
     </item>
     
     <item
-        android:id="@+id/action_harware"
+        android:id="@+id/action_screen"
+        android:title="Screen">
+    </item>
+    <item
+        android:id="@+id/action_camera"
         android:title="Camera">
+    </item>
+    
+    <item
+        android:id="@+id/action_sensor"
+        android:title="Sensor">
+    </item>
+    <item
+        android:id="@+id/action_connectivity"
+        android:title="Connectivity">
+    </item>
+    <item
+        android:id="@+id/action_misc"
+        android:title="Misc">
     </item>
 
 </menu>
