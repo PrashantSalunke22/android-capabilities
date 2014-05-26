@@ -4,7 +4,7 @@ Android-Capabilities
 color coded list displaying what software/hardware features your device has, green if you have it, red if you don't.
 I made it to aid in the development of android apps.
 
-Fearures displayed:
+Features displayed:
 
 		PackageManager.FEATURE_APP_WIDGETS
 		PackageManager.FEATURE_AUDIO_LOW_LATENCY
