@@ -5,6 +5,7 @@ color coded list displaying what software/hardware features your device has, gre
 I made it to aid in the development of android apps.
 
 Fearures displayed:
+
 		PackageManager.FEATURE_APP_WIDGETS
 		PackageManager.FEATURE_AUDIO_LOW_LATENCY
 		PackageManager.FEATURE_BLUETOOTH
